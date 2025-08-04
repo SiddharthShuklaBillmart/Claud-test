@@ -113,31 +113,6 @@
     user-select: none;
   }
 
-  // Delete button styling (for feature branch demo)
-  .delete-btn {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateX(10px);
-
-    &:hover {
-      background: linear-gradient(135deg, #ee5a52 0%, #da4c4c 100%);
-      transform: translateX(0) scale(1.05);
-    }
-  }
-
-  &:hover .delete-btn {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
   // Enhanced completed state styling
   &:has(input[type="checkbox"]:checked) {
     background: linear-gradient(135deg, 

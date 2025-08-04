@@ -1,5 +1,6 @@
 <h1>Todos</h1>
 
+<app-add-todo (todoAdded)="onTodoAdded($event)"></app-add-todo>
 
 @if (!todoitems().length) {
     <p>Loading...</p>

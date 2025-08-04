@@ -1,0 +1,17 @@
+<div class="add-todo-container">
+  <form (ngSubmit)="onSubmit($event)" class="add-todo-form">
+    <div class="input-group">
+      <input 
+        type="text" 
+        [(ngModel)]="newTodoTitle" 
+        placeholder="Enter a new todo..." 
+        class="todo-input"
+        name="newTodo"
+        required
+      >
+      <button type="submit" class="add-button" [disabled]="!newTodoTitle().trim()">
+        Add Todo
+      </button>
+    </div>
+  </form>
+</div>

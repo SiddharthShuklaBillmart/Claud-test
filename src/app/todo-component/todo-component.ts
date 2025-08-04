@@ -3,13 +3,14 @@ import { TodosService } from '../services/todos-service';
 import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
 import { TodoItem } from '../components/todo-item/todo-item';
+import { AddTodo } from '../components/add-todo/add-todo';
 import { FormsModule } from '@angular/forms';
 import { FilterTodosPipePipe } from '../pipes/filter-todos-pipe-pipe';
 // import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-todo-component',
-  imports: [TodoItem,FormsModule,FilterTodosPipePipe],
+  imports: [TodoItem, AddTodo, FormsModule, FilterTodosPipePipe],
   templateUrl: './todo-component.html',
   styleUrl: './todo-component.scss'
 })
@@ -38,5 +39,11 @@ export class TodoComponent implements OnInit {
           return todo
         })
        })
+    }
+
+    onTodoAdded(newTodo: Todo) {
+      this.todoService.addTodo(newTodo).subscribe((todo) => {
+        this.todoitems.update((todos) => [todo, ...todos])
+      })
     }
 }

@@ -18,6 +18,7 @@ export class AddTodo {
       const newTodo: Todo = {
         id: Date.now(), // Simple ID generation
         title: title,
+        
         completed: false,
         userId: 1
       }

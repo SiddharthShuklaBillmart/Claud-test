@@ -13,6 +13,6 @@
 
 <ul>
     @for (todo of todoitems() | filterTodosPipe : searchTerm() ; track todo.id) {
-        <app-todo-item (todoToggled)="this.updateTodoToggled($event)" [todo]="todo"/>  
+        <app-todo-item (todoToggled)="this.updateTodoToggled($event)" (todoDeleted)="this.deleteTodo($event)" (todoUpdated)="this.updateTodo($event)" [todo]="todo"/>  
     }
 </ul>

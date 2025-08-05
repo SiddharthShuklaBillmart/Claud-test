@@ -1,4 +1,9 @@
 <li appAppHighlightCompletedTodo (change)="this.todoClicked()" [isCompleted]="todo().completed" class="todo_item">
     <input id="todo-{{todo().id}}" type="checkbox" [checked]="todo().completed"/>
-    <label for="todo-{{todo().id}}" >{{todo().title | uppercase}}</label>
+    <label for="todo-{{todo().id}}" *ngIf="!isEditing" >{{todo().title | uppercase}}</label>
+    <input *ngIf="isEditing" [(ngModel)]="editedTitle" (keyup.enter)="saveEdit()" (keyup.escape)="cancelEdit()" class="edit-input" type="text"/>
+    <button *ngIf="!isEditing" class="edit-btn" (click)="startEdit()" type="button">Edit</button>
+    <button *ngIf="isEditing" class="save-btn" (click)="saveEdit()" type="button">Save</button>
+    <button *ngIf="isEditing" class="cancel-btn" (click)="cancelEdit()" type="button">Cancel</button>
+    <button class="delete-btn" (click)="deleteTodo()" type="button">Delete</button>
 </li>

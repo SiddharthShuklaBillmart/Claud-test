@@ -46,4 +46,21 @@ export class TodoComponent implements OnInit {
         this.todoitems.update((todos) => [todo, ...todos])
       })
     }
+
+    deleteTodo(todoToDelete: Todo) {
+      this.todoitems.update((todos) => {
+        return todos.filter(todo => todo.id !== todoToDelete.id)
+      })
+    }
+
+    updateTodo(updatedTodo: Todo) {
+      this.todoitems.update((todos) => {
+        return todos.map(todo => {
+          if (todo.id === updatedTodo.id) {
+            return updatedTodo
+          }
+          return todo
+        })
+      })
+    }
 }

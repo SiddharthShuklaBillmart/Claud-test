@@ -113,6 +113,62 @@
     user-select: none;
   }
 
+  // Edit button styling
+  .edit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(10px);
+
+    &:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #5a67d8 100%);
+      transform: translateX(0) scale(1.05);
+    }
+  }
+
+  // Save button styling
+  .save-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+      transform: scale(1.05);
+    }
+  }
+
+  // Cancel button styling
+  .cancel-btn {
+    background: linear-gradient(135deg, #a0aec0 0%, #718096 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+      transform: scale(1.05);
+    }
+  }
+
   // Delete button styling (for feature branch demo)
   .delete-btn {
     background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
@@ -131,6 +187,11 @@
       background: linear-gradient(135deg, #ee5a52 0%, #da4c4c 100%);
       transform: translateX(0) scale(1.05);
     }
+  }
+
+  &:hover .edit-btn {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   &:hover .delete-btn {
